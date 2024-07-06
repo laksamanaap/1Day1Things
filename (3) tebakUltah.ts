@@ -9,7 +9,8 @@
 
 */}
 
-let binaryResult :  string[] = ['']
+import * as readline from 'readline';
+let binaryResult :  string[] = []
 
 let formattedOutput1 : string = '';
 const numberArr1: number[] = [
@@ -52,8 +53,8 @@ const numberArr5: number[] = [
 ]
 
 // Radix (2 = binary, 8 = octal, 10 = decimal, 16 = hexadecimal)
-const parseBinary = (num: number | null) => {
-    return parseInt('01110',2)
+const parseBinary = (num: string) => {
+    return parseInt(num , 2)
 }
 
 // Add 0 if the num is less than 10
@@ -106,4 +107,32 @@ numberArr5.forEach((numberArrFive, index) => {
     formattedOutput5 = formatNumber(formattedOutput5, index)
 });
 
+const questionArr : string[] = [formattedOutput1, formattedOutput2, formattedOutput3, formattedOutput4, formattedOutput5];
 
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+const askQuestion = (index: number) => {
+    if (index >= questionArr.length) {
+        console.log('Binary Result:', binaryResult.join(''));
+        console.log('Tanggal Ulang Tahun Anda Adalah : ',parseBinary(binaryResult.join('').toString()))
+        rl.close();
+        return;
+    }
+
+    console.log(`Apakah angka pada kumpulan nomer ini ada tanggal ulang tahun anda? \n${questionArr[index]}`);
+    rl.question('Jawab (y/t): ', (answer) => {
+        if (answer.toLowerCase() === 'y') {
+            binaryResult.push('1');
+        } else {
+            binaryResult.push('0');
+        }
+        askQuestion(index + 1);
+    });
+};
+
+askQuestion(0);
+
+// ts-node "(3) tebakUltah.ts"
