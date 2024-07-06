@@ -136,3 +136,4 @@ const askQuestion = (index: number) => {
 askQuestion(0);
 
 // ts-node "(3) tebakUltah.ts"
+// Reference : https://ifkarsyah.blogspot.com/2016/12/sulap-zaman-sd-menebak-tanggal-ultah.html
