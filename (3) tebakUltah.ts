@@ -78,31 +78,31 @@ const formatNumber = (formatedOutput : any | null, index : number) => {
 }
 
 // forEach num 1
-numberArr1.forEach((numberArrOne, index) => {
+numberArr1.forEach((numberArrOne : number, index : number) => {
     formattedOutput1 += addLeadingZero(numberArrOne);
     formattedOutput1 = formatNumber(formattedOutput1, index)
 });
 
 // forEach num 2
-numberArr2.forEach((numberArrTwo, index) => {
+numberArr2.forEach((numberArrTwo : number , index : number) => {
     formattedOutput2 += addLeadingZero(numberArrTwo);
     formattedOutput2 = formatNumber(formattedOutput2, index)
 });
 
 // forEach num 3
-numberArr3.forEach((numberArrThree, index) => {
+numberArr3.forEach((numberArrThree : number , index : number) => {
     formattedOutput3 += addLeadingZero(numberArrThree);
     formattedOutput3 = formatNumber(formattedOutput3, index)
 });
 
 // forEach num 4
-numberArr4.forEach((numberArrFour, index) => {
+numberArr4.forEach((numberArrFour : number , index : number) => {
     formattedOutput4 += addLeadingZero(numberArrFour);
     formattedOutput4 = formatNumber(formattedOutput4, index)
 });
 
 // forEach num 5
-numberArr5.forEach((numberArrFive, index) => {
+numberArr5.forEach((numberArrFive : number , index : number) => {
     formattedOutput5 += addLeadingZero(numberArrFive);
     formattedOutput5 = formatNumber(formattedOutput5, index)
 });
@@ -123,7 +123,7 @@ const askQuestion = (index: number) => {
     }
 
     console.log(`Apakah angka pada kumpulan nomer ini ada tanggal ulang tahun anda? \n${questionArr[index]}`);
-    rl.question('Jawab (y/t): ', (answer) => {
+    rl.question('Jawab (y/t): ', (answer : any) => {
         if (answer.toLowerCase() === 'y') {
             binaryResult.push('1');
         } else {
