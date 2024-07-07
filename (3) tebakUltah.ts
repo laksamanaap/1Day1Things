@@ -10,7 +10,7 @@
 */}
 
 import * as readline from 'readline';
-let binaryResult :  string[] = []
+let binaryResult: string[] = []
 
 let formattedOutput1 : string = '';
 const numberArr1: number[] = [
@@ -77,6 +77,7 @@ const formatNumber = (formatedOutput : any | null, index : number) => {
     return formatOutputRes
 }
 
+
 // forEach num 1
 numberArr1.forEach((numberArrOne : number, index : number) => {
     formattedOutput1 += addLeadingZero(numberArrOne);
@@ -107,7 +108,13 @@ numberArr5.forEach((numberArrFive : number , index : number) => {
     formattedOutput5 = formatNumber(formattedOutput5, index)
 });
 
-const questionArr : string[] = [formattedOutput1, formattedOutput2, formattedOutput3, formattedOutput4, formattedOutput5];
+const questionArr: string[] = [
+    formattedOutput1,
+    formattedOutput2,
+    formattedOutput3,
+    formattedOutput4,
+    formattedOutput5
+];
 
 const rl = readline.createInterface({
     input: process.stdin,
