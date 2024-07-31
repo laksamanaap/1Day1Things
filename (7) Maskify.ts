@@ -8,4 +8,4 @@ export function maskify(cc: string): string {
     return maskedPart + visiblePart;
 }
 
-console.log(maskify(4556364607935616)) // ############5616
+console.log(maskify("4556364607935616")) // ############5616
