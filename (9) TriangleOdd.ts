@@ -12,8 +12,16 @@ If we sum all the odd number, we can look that the triangle pattern is (n^3)
 
 */}
 
-
 export function rowSumOddNumbers(n: number): number {
     return n * n * n;
 }
+
+console.log(rowSumOddNumbers(1)) // 1
+console.log(rowSumOddNumbers(2)) // 8
+console.log(rowSumOddNumbers(3)) // 27
+console.log(rowSumOddNumbers(4)) // 64
+console.log(rowSumOddNumbers(5)) // 125
+
+
+
 
