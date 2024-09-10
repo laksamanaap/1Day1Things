@@ -16,31 +16,31 @@ public class plateNumber {
                   { 'S', 'E', 'M', 'A', 'R', 'A', 'N', 'G' }, // Semarang
                   { 'S', 'U', 'R', 'A', 'B', 'A', 'Y', 'A' }, // Surabaya
                   { 'M', 'A', 'L', 'A', 'N', 'G' }, // Malang
-                  { 'T', 'E', 'G', 'A', 'L' } // Tegal
+                  { 'T', 'E', 'G', 'A', 'L' }, // Tegal
       };
 
       public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter plat code : ");
 
-            System.out.print("Enter plate number code: ");
-            char plateCode = scanner.nextLine().toUpperCase().charAt(0);
+            char platCode = scanner.nextLine().toUpperCase().charAt(0);
+            String city = findCity(platCode);
 
-            String city = findCity(plateCode);
             if (city != null) {
-                  System.out.println("The city for plate number code " + plateCode + " is " + city);
+                  System.out.print("The plat code of " + platCode + " is : " + city);
             } else {
-                  System.out.println("Plate number code " + plateCode + " is for [Unknown]");
+                  System.out.println("Unknown");
             }
+
       }
 
-      private static String findCity(char plateCode) {
-
+      private static String findCity(char platCode) {
             for (int i = 0; i < Codes.length; i++) {
-                  if (plateCode == Codes[i]) {
+                  if (platCode == Codes[i]) {
                         return new String(Cities[i]);
                   }
             }
-
             return null;
       }
+
 }
