@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class plateNumber {
+class plateNumber {
 
       private static final char[] Codes = {
                   'A', 'B', 'D', 'E', 'F', 'G', 'S', 'H', 'N', 'T'
